@@ -3,12 +3,12 @@ import * as React from "react";
 import {InputAdornment, TextField} from "@material-ui/core";
 import {FieldMessageType} from "@alicompiler/raf-core/build/Field/UI/FieldUIConfiguration";
 
-interface Extra {
+export interface TextExtra {
     adornment?: any;
     adornmentPosition?: "start" | "end";
 }
 
-export class Text extends Field<Extra> {
+export class Text<Extra extends TextExtra = TextExtra> extends Field<Extra> {
 
     render(): any {
         const valid = this.validation().getCurrentValidState();
@@ -17,11 +17,21 @@ export class Text extends Field<Extra> {
         const message = this.ui().getMessage() ?? undefined;
         const errorMessage = this.ui().getMessageType() === FieldMessageType.ERROR;
         let extraProps = this.getExtraProps();
+        let otherProps = this.getOtherProps();
 
         return <TextField value={value} onChange={e => this.value().getOnChangeHandler().handle(e)}
-                          error={!valid} disabled={disable}
+                          error={!valid} disabled={disable} type={this.getInputType()}
                           helperText={message} FormHelperTextProps={{error: errorMessage}}
+                          {...otherProps}
                           {...extraProps}/>;
+    }
+
+    protected getOtherProps(): any {
+        return {};
+    }
+
+    protected getInputType(): string {
+        return "text";
     }
 
 

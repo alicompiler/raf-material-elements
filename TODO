@@ -1,14 +1,14 @@
 Elements :
-    - Text
-    - Password
+    - Text                  DONE
+    - Password              DONE
     - Radio
     - Select
     - Switch
     - Slider
-    - NativeDate
-    - NativeDatetime
-    - NativeTime
+    - NativeDate            DONE
+    - NativeDatetime        DONE
+    - NativeTime            DONE
     - CheckBox
-    - TextArea
+    - TextArea              DONE
     - AutoUpload
     - TextArray

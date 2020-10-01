@@ -3,6 +3,11 @@ import {Component} from "react";
 import {Form} from "@alicompiler/raf-core";
 import {Text} from "../Text";
 import {Button, Divider, Typography} from "@material-ui/core";
+import {Password} from "../Password";
+import {NativeDate} from "../NativeDate";
+import {NativeDateTime} from "../NativeDateTime";
+import {NativeTime} from "../NativeTime";
+import {TextArea} from "../TextArea";
 
 export class TextFieldExample extends Component {
 
@@ -15,7 +20,12 @@ export class TextFieldExample extends Component {
             <Typography variant={"h4"}>Simple Text Field</Typography>
 
             <Form ref={ref => this.simpleText = ref} fields={[
-                {as: Text, name: 'text'}
+                {as: Text, name: 'text'},
+                {as: Password, name: "password"},
+                {as: NativeDate, name: "date"},
+                {as: NativeDateTime, name: "datetime"},
+                {as: NativeTime, name: "time"},
+                {as: TextArea, name: 'text-area'}
             ]}/>
 
             <Button variant={"contained"} color={"primary"} onClick={() => (window as any).__form = this.simpleText}>
@@ -31,7 +41,17 @@ export class TextFieldExample extends Component {
                     as: Text, name: 'text', extra: {
                         adornment: <p>X</p>
                     }
-                }
+                },
+                {
+                    as: Password, name: 'password', extra: {
+                        adornment: <p>*</p>
+                    }
+                },
+                {
+                    as: NativeDate, name: 'date', extra: {
+                        adornment: <p>D</p>
+                    }
+                },
             ]}/>
             <Button variant={"contained"} color={"primary"} onClick={() => (window as any).__form = this.withIcon}>SETUP
                 FORM AS GLOBAL</Button>
@@ -43,10 +63,20 @@ export class TextFieldExample extends Component {
                     as: Text, name: 'text', extra: {
                         fullWidth: true, color: "primary", variant: "outlined"
                     }
+                },
+                {
+                    as: Password, name: 'password', extra: {
+                        placeholder: 'Enter Your Password', label: 'Password'
+                    }
+                },
+                {
+                    as: NativeDate, name: 'date', extra: {}
                 }
             ]}/>
-            <Button variant={"contained"} color={"primary"} onClick={() => (window as any).__form = this.withProps}>SETUP
-                FORM AS GLOBAL</Button>
+
+            <Button variant={"contained"} color={"primary"} onClick={() => (window as any).__form = this.withProps}>
+                SETUP FORM AS GLOBAL
+            </Button>
 
         </div>;
     }
