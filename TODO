@@ -1,10 +1,10 @@
 Elements :
     - Text                  DONE
     - Password              DONE
-    - Radio
-    - CheckBox
+    - Radio                 DONE
+    - CheckBox              DONE
     - Select                DONE
-    - Switch
+    - Switch                DONE
     - Slider
     - NativeDate            DONE
     - NativeDatetime        DONE

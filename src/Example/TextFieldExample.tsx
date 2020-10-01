@@ -11,6 +11,7 @@ import {TextArea} from "../TextArea";
 import {Select} from "../Select";
 import {Radio} from "../Radio";
 import {Checkbox, Switch} from "../Checkbox";
+import {Slider} from "../Slider";
 
 export class TextFieldExample extends Component {
 
@@ -52,6 +53,15 @@ export class TextFieldExample extends Component {
                 },
                 {
                     as: Switch, name: 'switch', extra: {label: 'Switch'},
+                },
+                {
+                    as: Slider, name: "volume"
+                },
+                {
+                    as: Slider, name: "volume2", extra: {
+                        label: 'VOLUME',
+                        marks: [{value: 0, label: 'Low'}, {value: 30, label: 'Mid'}, {value: 70, label: 'High'}]
+                    }
                 }
             ]}/>
 
