@@ -9,6 +9,7 @@ import {NativeDateTime} from "../NativeDateTime";
 import {NativeTime} from "../NativeTime";
 import {TextArea} from "../TextArea";
 import {Select} from "../Select";
+import {Radio} from "../Radio";
 
 export class TextFieldExample extends Component {
 
@@ -30,9 +31,21 @@ export class TextFieldExample extends Component {
                 {
                     as: Select, name: "gender", extra: {
                         options: [{text: "Male", value: 1}, {text: "Female", value: 2}],
-                        label: 'Gender', fullWidth : true
+                        label: 'Gender', fullWidth: true
                     }
                 },
+                {
+                    as: Radio, name: 'action', extra: {
+                        options: [
+                            {text: 'Delete', value: 'delete', radioProps: {color: 'secondary'}},
+                            {text: 'Archive', value: 'archive'},
+                            {text: 'Edit', value: 'edit', radioProps: {color: 'primary'}},
+                        ], label: 'SELECT ACTION',
+                        groupProps: {
+                            row: false
+                        }
+                    }
+                }
             ]}/>
 
             <Button variant={"contained"} color={"primary"} onClick={() => (window as any).__form = this.simpleText}>
