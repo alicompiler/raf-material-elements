@@ -1,0 +1,14 @@
+Elements :
+    - Text
+    - Password
+    - Radio
+    - Select
+    - Switch
+    - Slider
+    - NativeDate
+    - NativeDatetime
+    - NativeTime
+    - CheckBox
+    - TextArea
+    - AutoUpload
+    - TextArray
