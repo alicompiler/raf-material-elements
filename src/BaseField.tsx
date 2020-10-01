@@ -13,7 +13,15 @@ export abstract class BaseField<Extra = any> extends Field<Extra> {
 
         return <Component {...mainProps}
                           {...otherProps}
-                          {...extraProps}/>;
+                          {...extraProps}>
+            {
+                this.renderChildren()
+            }
+        </Component>;
+    }
+
+    protected renderChildren(): any {
+        return null;
     }
 
     protected abstract getComponent(): any;
