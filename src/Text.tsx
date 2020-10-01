@@ -1,33 +1,22 @@
-import {Field} from "@alicompiler/raf-core";
 import * as React from "react";
 import {InputAdornment, TextField} from "@material-ui/core";
-import {FieldMessageType} from "@alicompiler/raf-core/build/Field/UI/FieldUIConfiguration";
+import {BaseField} from "./BaseField";
 
 export interface TextExtra {
     adornment?: any;
     adornmentPosition?: "start" | "end";
 }
 
-export class Text<Extra extends TextExtra = TextExtra> extends Field<Extra> {
+export class Text<Extra extends TextExtra = TextExtra> extends BaseField<Extra> {
 
-    render(): any {
-        const valid = this.validation().getCurrentValidState();
-        const value = this.value().get();
-        const disable = this.ui().shouldDisable();
-        const message = this.ui().getMessage() ?? undefined;
-        const errorMessage = this.ui().getMessageType() === FieldMessageType.ERROR;
-        let extraProps = this.getExtraProps();
-        let otherProps = this.getOtherProps();
-
-        return <TextField value={value} onChange={e => this.value().getOnChangeHandler().handle(e)}
-                          error={!valid} disabled={disable} type={this.getInputType()}
-                          helperText={message} FormHelperTextProps={{error: errorMessage}}
-                          {...otherProps}
-                          {...extraProps}/>;
+    protected getComponent(): any {
+        return TextField;
     }
 
-    protected getOtherProps(): any {
-        return {};
+    protected getMainProps(): any {
+        const props = super.getMainProps();
+        props.type = this.getInputType()
+        return props;
     }
 
     protected getInputType(): string {
@@ -35,7 +24,7 @@ export class Text<Extra extends TextExtra = TextExtra> extends Field<Extra> {
     }
 
 
-    private getExtraProps(): any {
+    protected getExtraProps(): any {
         let {adornment, adornmentPosition, ...extraProps}: any = this.state.extra;
         if (adornment) {
             let adornmentProps = Text.getAdornmentProps(adornmentPosition, adornment);
@@ -62,4 +51,5 @@ export class Text<Extra extends TextExtra = TextExtra> extends Field<Extra> {
             {adornment}
         </InputAdornment>;
     }
+
 }
