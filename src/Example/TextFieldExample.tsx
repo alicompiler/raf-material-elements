@@ -10,6 +10,7 @@ import {NativeTime} from "../NativeTime";
 import {TextArea} from "../TextArea";
 import {Select} from "../Select";
 import {Radio} from "../Radio";
+import {Checkbox, Switch} from "../Checkbox";
 
 export class TextFieldExample extends Component {
 
@@ -45,6 +46,12 @@ export class TextFieldExample extends Component {
                             row: false
                         }
                     }
+                },
+                {
+                    as: Checkbox, name: 'check', extra: {label: 'Checkbox'},
+                },
+                {
+                    as: Switch, name: 'switch', extra: {label: 'Switch'},
                 }
             ]}/>
 
