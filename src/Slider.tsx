@@ -1,5 +1,5 @@
 import {BaseField} from "./BaseField";
-import {Slider as MaterialSlider, Typography} from "@material-ui/core";
+import {Box, Slider as MaterialSlider, Typography} from "@material-ui/core";
 import * as React from "react";
 
 export class Slider extends BaseField {
@@ -9,13 +9,14 @@ export class Slider extends BaseField {
         let extraProps = this.getExtraProps();
         let otherProps = this.getOtherProps();
         const mainProps = this.getMainProps();
-        
-        return <div>
+
+        return <Box display={"flex"} alignItems={"center"}>
             {this.renderLabel()}
+            <Box p={2}/>
             <MaterialSlider {...mainProps}
                             {...otherProps}
                             {...extraProps}/>
-        </div>
+        </Box>
     }
 
     protected getComponent(): any {
