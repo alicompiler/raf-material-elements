@@ -5,10 +5,10 @@ Elements :
     - CheckBox              DONE
     - Select                DONE
     - Switch                DONE
-    - Slider
+    - Slider                DONE
     - NativeDate            DONE
     - NativeDatetime        DONE
     - NativeTime            DONE
     - TextArea              DONE
     - AutoUpload
-    - TextArray
+    - TextArray             

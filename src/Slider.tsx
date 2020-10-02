@@ -9,9 +9,7 @@ export class Slider extends BaseField {
         let extraProps = this.getExtraProps();
         let otherProps = this.getOtherProps();
         const mainProps = this.getMainProps();
-
-        const Component = this.getComponent();
-
+        
         return <div>
             {this.renderLabel()}
             <MaterialSlider {...mainProps}

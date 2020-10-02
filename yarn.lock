@@ -3,9 +3,9 @@
 
 
 "@alicompiler/raf-core@^1.0.2":
-  version "1.0.2"
-  resolved "https://npm.pkg.github.com/download/@alicompiler/raf-core/1.0.2/7e1fd2733a19abecffd1dd2f263f643a4d188c8761913a7a0579af31b8f9f6a5#2ac850f1676a26ecac550ad4941e59539b447a7b"
-  integrity sha512-B/IqNF7ApMAUAB4J7YwS+2G2kkQK1nR4f8Lpp8zJ17dJo1SV1QCMAgpTE4OmtvWDcxgIAMpZZlSI3lv73ssRnw==
+  version "1.2.1"
+  resolved "https://npm.pkg.github.com/download/@alicompiler/raf-core/1.2.1/9963bf07dba6c070fc5abbae356d2f83139eb81637cefbb45fdda8315afab867#48c63a2875fb465a395e48c73b27fb69b81b5a6a"
+  integrity sha512-pi0/dWtcjGpJiACCw9zM1z/DcC8fcZsGnXeBwmTZcHc745Uv+Vuj6w1uGpWQ5Q+zG/Y07a8K0FFtFyBonkh/Kg==
 
 "@babel/code-frame@7.8.3", "@babel/code-frame@^7.0.0", "@babel/code-frame@^7.8.3":
   version "7.8.3"

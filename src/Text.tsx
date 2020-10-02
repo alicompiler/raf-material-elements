@@ -15,14 +15,14 @@ export class Text<Extra extends TextExtra = TextExtra> extends BaseField<Extra> 
 
     protected getMainProps(): any {
         const props = super.getMainProps();
-        props.type = this.getInputType()
+        props.type = this.getInputType();
+        props.fullWidth = true;
         return props;
     }
 
     protected getInputType(): string {
         return "text";
     }
-
 
     protected getExtraProps(): any {
         let {adornment, adornmentPosition, ...extraProps}: any = this.state.extra;

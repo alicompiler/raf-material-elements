@@ -12,6 +12,8 @@ import {Select} from "../Select";
 import {Radio} from "../Radio";
 import {Checkbox, Switch} from "../Checkbox";
 import {Slider} from "../Slider";
+import {AutoUpload} from "../AutoUpload";
+import {TextArray} from "../TextArray";
 
 export class TextFieldExample extends Component {
 
@@ -62,6 +64,16 @@ export class TextFieldExample extends Component {
                         label: 'VOLUME',
                         marks: [{value: 0, label: 'Low'}, {value: 30, label: 'Mid'}, {value: 70, label: 'High'}]
                     }
+                },
+                {
+                    as: AutoUpload, name: 'image', extra: {
+                        label: 'Profile Image', uploadOptions: {
+                            url: 'http://httpbin.org/post'
+                        }
+                    }
+                },
+                {
+                    as: TextArray, name: 'names'
                 }
             ]}/>
 
