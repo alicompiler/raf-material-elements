@@ -33,6 +33,7 @@ export abstract class BaseField<Extra = any> extends Field<Extra> {
         const message = this.ui().getMessage() ?? undefined;
         const isErrorMessage = this.ui().getMessageType() === FieldMessageType.ERROR;
 
+        // noinspection JSUnusedGlobalSymbols
         return {
             value: value,
             onChange: (e: any) => this.value().getOnChangeHandler().handle(e),
