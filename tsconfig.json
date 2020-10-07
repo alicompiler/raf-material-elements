@@ -1,6 +1,8 @@
 {
   "compilerOptions": {
     "target": "es5",
+    "outDir": "./build",
+    "declaration": true,
     "lib": [
       "dom",
       "dom.iterable",
@@ -21,5 +23,9 @@
   },
   "include": [
     "src"
+  ],
+  "exclude": [
+    "node_modules",
+    "src/Example/**"
   ]
 }
