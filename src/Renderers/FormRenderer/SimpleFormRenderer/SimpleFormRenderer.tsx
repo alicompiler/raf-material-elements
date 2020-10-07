@@ -35,6 +35,7 @@ export class SimpleFormRenderer extends MaterialFormRendererBase<SimpleFormRende
 
     private renderOneFieldOrFieldArray(field: any): any {
         const horizontalSpacing = this.getRenderOptions().horizontalSpacing;
+        console.log(field);
         return Array.isArray(field) ?
             <Box px={horizontalSpacing} display={'flex'}>{field.map(field => <Box
                 flex={1}>{field}</Box>)}</Box>

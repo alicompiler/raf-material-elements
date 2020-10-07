@@ -1,9 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Examples from "./Example/Examples";
+import MaterialExample from "./Example/MaterialExample";
+import {setupRafMaterial} from "./setup";
+
+setupRafMaterial();
 
 ReactDOM.render(
-    <Examples/>,
+    <MaterialExample/>,
     document.getElementById('root')
 );
 

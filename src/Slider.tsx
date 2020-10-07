@@ -12,7 +12,6 @@ export class Slider extends BaseField {
 
         return <Box display={"flex"} alignItems={"center"}>
             {this.renderLabel()}
-            <Box p={2}/>
             <MaterialSlider {...mainProps}
                             {...otherProps}
                             {...extraProps}/>
@@ -28,7 +27,10 @@ export class Slider extends BaseField {
         if (!label) {
             return null;
         }
-        return <Typography gutterBottom>{label}</Typography>;
+        return <Box>
+            <Typography gutterBottom>{label}</Typography>
+            <Box p={2}/>
+        </Box>;
     }
 
     protected getMainProps(): any {

@@ -27,7 +27,6 @@ export class AutoUpload extends AutoUploadField<Extra> {
             <Box>
                 {this.renderLabel()}
             </Box>
-            <Box p={2}/>
             <Box>
                 {this.renderContent()}
             </Box>
@@ -39,7 +38,10 @@ export class AutoUpload extends AutoUploadField<Extra> {
         if (!label) {
             return null;
         }
-        return <Typography>{label}</Typography>
+        return <Box>
+            <Typography>{label}</Typography>
+            <Box p={2}/>
+        </Box>
     }
 
     private renderContent(): any {

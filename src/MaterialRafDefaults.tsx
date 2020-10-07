@@ -40,9 +40,7 @@ export const MaterialRafDefaults: IMaterialRafDefaults = {
             form => <Button color={"primary"} variant={'contained'}
                             onClick={() => form.submit()}>{Localization.submit}</Button>
         ],
-        actionsWrapperProps: {
-            p: 2
-        },
+        actionsWrapperProps: {},
         actionDivider: true,
         actionWrapperProps: {},
         actionHorizontalSpacing: 2,
@@ -50,7 +48,7 @@ export const MaterialRafDefaults: IMaterialRafDefaults = {
     },
 
     label: {
-        alignLabel: "start",
+        alignLabel: "center",
         alternativeLabelPropertyName: 'label',
         labelPropertyName: '__label',
         labelAreaWidth: 160,

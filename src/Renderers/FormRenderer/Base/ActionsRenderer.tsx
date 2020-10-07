@@ -20,6 +20,7 @@ export class DefaultActionsRenderer implements ActionsRenderer {
     render(): any {
         const actionWrapperProps = this.options.actionsWrapperProps ?? {};
         const alignItems = this.options.actionsAlignments === "center" ? "center" : `flex-${this.options.actionsAlignments}`;
+
         return <Box {...actionWrapperProps}>
             {
                 this.renderDivider()

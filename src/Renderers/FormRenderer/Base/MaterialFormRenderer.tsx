@@ -1,6 +1,5 @@
 import {DefaultHeaderRenderer} from "./HeaderRenderer";
 import {DefaultActionsRenderer} from "./ActionsRenderer";
-import IForm from "@alicompiler/raf-core/build/Form/IForm";
 import {Box} from "@material-ui/core";
 import React from "react";
 import {ActionsRenderOptions, HeaderRenderOptions} from "./BaseRenderOptions";
@@ -33,7 +32,7 @@ export abstract class MaterialFormRendererBase<O extends RenderOptions> extends 
     }
 
     getRenderOptions(): O {
-        const formRenderOptions = this.getForm().getProps().extra.renderOptions;
+        const formRenderOptions = this.getForm().getProps().extra?.renderOptions ?? {};
         return {...this.getDefaultRenderOptions(), ...formRenderOptions};
     }
 
