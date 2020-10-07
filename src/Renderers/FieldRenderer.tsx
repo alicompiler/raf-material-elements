@@ -11,14 +11,11 @@ export class FieldRenderer extends DefaultFieldRenderer {
     }
 
     protected renderWrapper(fields: any): React.ReactElement {
-        
         return fields;
     }
 
-    // protected renderArray(index: number, config: FieldOptions[]): any {
-    //     return config.map(config => this.renderFieldElement(config, true));
-    // }
-
-
-
+    protected renderArray(index: number, config: FieldOptions[]): any {
+        return config.map(config => this.renderFieldElement(config, true));
+    }
+    
 }

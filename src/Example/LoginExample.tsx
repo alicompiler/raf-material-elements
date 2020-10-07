@@ -18,9 +18,10 @@ export class LoginExample extends Component {
                         as: Password, name: 'password', extra: {placeholder: 'Password', label: 'Password'}
                     },
                     [
-                        {as: Text, name: 'test1', extra: {placeholder: 'Test 1'}},
-                        {as: Text, name: 'test2', extra: {placeholder: 'Test 2'}},
-                        {as: Text, name: 'test3', extra: {placeholder: 'Test 3'}}
+                        {as: Text, name: 'pinCode_1', extra: {placeholder: 'X', align: 'center'}},
+                        {as: Text, name: 'pinCode_2', extra: {placeholder: 'X'}},
+                        {as: Text, name: 'pinCode_3', extra: {placeholder: 'X'}},
+                        {as: Text, name: 'pinCode_4', extra: {placeholder: 'X'}},
                     ]
                 ]} extra={{
                     renderOptions: {

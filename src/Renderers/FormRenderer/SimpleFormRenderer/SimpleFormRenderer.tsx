@@ -1,5 +1,5 @@
 import React from "react";
-import {Box} from "@material-ui/core";
+import {Box, Grid} from "@material-ui/core";
 import {defaultSimpleFormRendererOptions, SimpleFormRendererOptions} from "./SimpleFormRendererOptions";
 import {MaterialFormRendererBase} from "../Base/MaterialFormRenderer";
 import IForm from "@alicompiler/raf-core/build/Form/IForm";
@@ -34,11 +34,15 @@ export class SimpleFormRenderer extends MaterialFormRendererBase<SimpleFormRende
     }
 
     private renderOneFieldOrFieldArray(field: any): any {
-        const horizontalSpacing = this.getRenderOptions().horizontalSpacing;
-        console.log(field);
+        const horizontalSpacing: any = this.getRenderOptions().horizontalSpacing;
         return Array.isArray(field) ?
-            <Box px={horizontalSpacing} display={'flex'}>{field.map(field => <Box
-                flex={1}>{field}</Box>)}</Box>
+            <Grid container spacing={horizontalSpacing}>
+                {
+                    field.map((component, index) => <Grid xs item key={index}>
+                        {component}
+                    </Grid>)
+                }
+            </Grid>
             :
             field;
     }
