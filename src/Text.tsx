@@ -1,6 +1,6 @@
 import * as React from "react";
-import {InputAdornment, TextField} from "@material-ui/core";
-import {BaseField} from "./BaseField";
+import { InputAdornment, TextField } from "@material-ui/core";
+import { BaseField } from "./BaseField";
 
 export interface TextExtra {
     adornment?: any;
@@ -25,12 +25,12 @@ export class Text<Extra extends TextExtra = TextExtra> extends BaseField<Extra> 
     }
 
     protected getExtraProps(): any {
-        let {adornment, adornmentPosition, ...extraProps}: any = this.state.extra;
+        let { adornment, adornmentPosition, ...extraProps }: any = this.state.extra;
         if (adornment) {
             let adornmentProps = Text.getAdornmentProps(adornmentPosition, adornment);
             let inputProps = extraProps.InputProps ?? {};
-            inputProps = {...adornmentProps, ...inputProps};
-            extraProps.InputProps = {...inputProps};
+            inputProps = { ...adornmentProps, ...inputProps };
+            extraProps.InputProps = { ...inputProps };
         }
         return extraProps;
     }

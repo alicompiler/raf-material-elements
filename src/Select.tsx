@@ -1,6 +1,6 @@
 import React from "react";
-import {Text} from "./Text";
-import {MenuItem} from "@material-ui/core";
+import { Text } from "./Text";
+import { MenuItem } from "@material-ui/core";
 
 export class Select extends Text {
 

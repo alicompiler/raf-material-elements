@@ -3,7 +3,7 @@ import {DefaultActionsRenderer} from "./ActionsRenderer";
 import {Box} from "@material-ui/core";
 import React from "react";
 import {ActionsRenderOptions, HeaderRenderOptions} from "./BaseRenderOptions";
-import {DefaultFormRenderer} from "@alicompiler/raf-core";
+import {DefaultFormRenderer} from "@autofiy/raf-core";
 
 export interface MaterialFormRenderer<O extends RenderOptions> {
     renderHeaderArea(): any;

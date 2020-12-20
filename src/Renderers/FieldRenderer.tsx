@@ -1,5 +1,5 @@
-import {DefaultFieldRenderer} from "@alicompiler/raf-core";
-import {FieldOptions} from "@alicompiler/raf-core/build/Field/FieldProps";
+import {DefaultFieldRenderer} from "@autofiy/raf-core";
+import {FieldOptions} from "@autofiy/raf-core/build/Field/FieldProps";
 import React from "react";
 
 export class FieldRenderer extends DefaultFieldRenderer {

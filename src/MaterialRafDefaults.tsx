@@ -1,7 +1,7 @@
-import {Box, Button} from "@material-ui/core";
+import { Box, Button } from "@material-ui/core";
 import React from "react";
-import IForm from "@alicompiler/raf-core/build/Form/IForm";
-import {Localization} from "./Localization";
+import { IForm } from "@autofiy/raf-core";
+import { Localization } from "./Localization";
 
 export interface IMaterialRafDefaults {
     action: {
@@ -38,7 +38,7 @@ export const MaterialRafDefaults: IMaterialRafDefaults = {
     action: {
         actions: [
             form => <Button color={"primary"} variant={'contained'}
-                            onClick={() => form.submit()}>{Localization.submit}</Button>
+                onClick={() => form.submit()}>{Localization.submit}</Button>
         ],
         actionsWrapperProps: {},
         actionDivider: true,
@@ -55,12 +55,12 @@ export const MaterialRafDefaults: IMaterialRafDefaults = {
     },
 
     header: {
-        headerProps: {variant: "h5"},
+        headerProps: { variant: "h5" },
         headerDivider: true,
     },
 
     field: {
-        keyValueSeparator: () => <Box p={2}/>,
+        keyValueSeparator: () => <Box p={2} />,
         fieldDivider: true,
         fieldSpacing: 2,
         horizontalSpacing: 2

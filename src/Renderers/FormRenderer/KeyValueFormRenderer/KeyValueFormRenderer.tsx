@@ -1,12 +1,11 @@
 import React from "react";
-import {Box, Divider} from "@material-ui/core";
-import {getFormService} from "@alicompiler/raf-core/build/Form/FormService";
-import FieldRenderer from "@alicompiler/raf-core/build/Protocol/FieldRenderer";
-import FormDefault from "@alicompiler/raf-core/build/Form/FormDefault";
-import {FieldOptions} from "@alicompiler/raf-core/build/Field/FieldProps";
-import {DefaultLabelRenderer} from "./KeyValueLabelRenderer";
-import {defaultKeyValueRenderOptions, KeyValueRenderOptions} from "./KeyValueRenderOptions";
-import {MaterialFormRendererBase} from "../Base/MaterialFormRenderer";
+import { Box, Divider } from "@material-ui/core";
+import FieldRenderer from "@autofiy/raf-core/build/Protocol/FieldRenderer";
+import FormDefault from "@autofiy/raf-core";
+import { FieldOptions } from "@autofiy/raf-core/build/Field/FieldProps";
+import { DefaultLabelRenderer } from "./KeyValueLabelRenderer";
+import { defaultKeyValueRenderOptions, KeyValueRenderOptions } from "./KeyValueRenderOptions";
+import { MaterialFormRendererBase } from "../Base/MaterialFormRenderer";
 
 export class KeyValueFormRenderer extends MaterialFormRendererBase<KeyValueRenderOptions> {
 
@@ -17,7 +16,7 @@ export class KeyValueFormRenderer extends MaterialFormRendererBase<KeyValueRende
 
 
     renderFieldsArea(): any {
-        const fieldsRenderer = getFormService<FieldRenderer>("field renderer", this.getForm(), this.getForm().getProps().services?.fieldRenderer, FormDefault.getFieldRenderer());
+        const fieldsRenderer: FieldRenderer = this.getForm().getServiceProvider().getService("fieldRenderer");
         const fields = fieldsRenderer.render();
         const fieldsOptions = this.getForm().getProps().fields;
         const options = this.getRenderOptions();
@@ -46,7 +45,7 @@ export class KeyValueFormRenderer extends MaterialFormRendererBase<KeyValueRende
                 }
             </Box>
             {
-                withFieldDivider && <Divider/>
+                withFieldDivider && <Divider />
             }
         </React.Fragment>
     }

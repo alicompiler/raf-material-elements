@@ -1,8 +1,8 @@
 import React from "react";
-import {Box, Grid} from "@material-ui/core";
-import {defaultSimpleFormRendererOptions, SimpleFormRendererOptions} from "./SimpleFormRendererOptions";
-import {MaterialFormRendererBase} from "../Base/MaterialFormRenderer";
-import IForm from "@alicompiler/raf-core/build/Form/IForm";
+import { Box, Grid } from "@material-ui/core";
+import { defaultSimpleFormRendererOptions, SimpleFormRendererOptions } from "./SimpleFormRendererOptions";
+import { MaterialFormRendererBase } from "../Base/MaterialFormRenderer";
+import { IForm } from "@autofiy/raf-core";
 
 
 export class SimpleFormRenderer extends MaterialFormRendererBase<SimpleFormRendererOptions> {
@@ -20,7 +20,7 @@ export class SimpleFormRenderer extends MaterialFormRendererBase<SimpleFormRende
     }
 
     protected getDefaultRenderOptions(): SimpleFormRendererOptions {
-        return {...defaultSimpleFormRendererOptions}
+        return { ...defaultSimpleFormRendererOptions }
     }
 
 

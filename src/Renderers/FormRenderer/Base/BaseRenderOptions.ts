@@ -1,4 +1,4 @@
-import IForm from "@alicompiler/raf-core/build/Form/IForm";
+import { IForm } from "@autofiy/raf-core";
 
 export interface HeaderRenderOptions {
     header?: string | ((form: IForm) => any);

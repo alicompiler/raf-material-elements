@@ -1,9 +1,9 @@
-import {AutoUploadField} from "@alicompiler/raf-core";
+import { AutoUploadField } from "@autofiy/raf-core";
 import React from "react";
-import {Avatar, Box, Button, CircularProgress, TextField, Typography} from "@material-ui/core";
-import {AutoUploadFieldExtraConfiguration} from "@alicompiler/raf-core/build/Field/Concrete/AutoUploadField/AutoUploadFieldExtraConfiguration";
-import {FieldProps} from "@alicompiler/raf-core/build/Field/FieldProps";
-import {Localization} from "./Localization";
+import { Avatar, Box, Button, CircularProgress, TextField, Typography } from "@material-ui/core";
+import { AutoUploadFieldExtraConfiguration } from "@autofiy/raf-core/build/Field/Concrete/AutoUploadField/AutoUploadFieldExtraConfiguration";
+import { FieldProps } from "@autofiy/raf-core/build/Field/FieldProps";
+import { Localization } from "./Localization";
 
 export interface Extra extends AutoUploadFieldExtraConfiguration {
     getFileUrl?: (uploadedFile: string) => string;
@@ -40,7 +40,7 @@ export class AutoUpload extends AutoUploadField<Extra> {
         }
         return <Box>
             <Typography>{label}</Typography>
-            <Box p={2}/>
+            <Box p={2} />
         </Box>
     }
 
@@ -58,7 +58,7 @@ export class AutoUpload extends AutoUploadField<Extra> {
 
     protected renderProgress(): any {
         return <Box display="flex" alignItems={'center'}>
-            <CircularProgress variant="indeterminate"/>
+            <CircularProgress variant="indeterminate" />
             <Box p={4}>
                 <Typography variant="caption" component="div" color="textSecondary">
                     {`${Math.round(this.extra().getProgress())}%`}
@@ -81,8 +81,8 @@ export class AutoUpload extends AutoUploadField<Extra> {
             cancelText = cancel;
         }
         return <Button onClick={() => this.getUploader().cancel()}
-                       color={'secondary'}
-                       variant={"outlined"}>{cancelText}</Button>
+            color={'secondary'}
+            variant={"outlined"}>{cancelText}</Button>
     }
 
     protected renderUploadedFile(): any {
@@ -92,7 +92,7 @@ export class AutoUpload extends AutoUploadField<Extra> {
         }
         return <Box display={"flex"} alignItems={"center"}>
             {this.renderUploadedFileContent()}
-            <Box p={2}/>
+            <Box p={2} />
             <Button variant={"outlined"} color={"secondary"} onClick={() => this.extra().removeUploadedFile()}>
                 {Localization.remove}
             </Button>
@@ -104,7 +104,7 @@ export class AutoUpload extends AutoUploadField<Extra> {
         const getFileUrl = this.extra().config('getFileUrl') ?? ((file: string) => file);
         const url = getFileUrl(uploadedFile);
         if (uploadedFile.endsWith(".jpg") || uploadedFile.endsWith(".png") || uploadedFile.endsWith(".jpeg")) {
-            return <Avatar src={url}/>;
+            return <Avatar src={url} />;
         } else {
             return <Typography variant={'caption'} color={'primary'}>{uploadedFile}</Typography>;
         }
@@ -112,7 +112,7 @@ export class AutoUpload extends AutoUploadField<Extra> {
 
     private renderSelectFile(): any {
         return <TextField type={'file'}
-                          onChange={(e: any) => this.value().getOnChangeHandler().handle(e)}/>;
+            onChange={(e: any) => this.value().getOnChangeHandler().handle(e)} />;
     }
 
 }

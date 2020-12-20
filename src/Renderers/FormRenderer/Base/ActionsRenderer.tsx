@@ -1,7 +1,7 @@
-import IForm from "@alicompiler/raf-core/build/Form/IForm";
+import { IForm } from "@autofiy/raf-core";
 import React from "react";
-import {Box, Divider} from "@material-ui/core";
-import {ActionsRenderOptions} from "./BaseRenderOptions";
+import { Box, Divider } from "@material-ui/core";
+import { ActionsRenderOptions } from "./BaseRenderOptions";
 
 export interface ActionsRenderer {
     render(): any;
@@ -35,8 +35,8 @@ export class DefaultActionsRenderer implements ActionsRenderer {
 
     private renderDivider(): any {
         return this.options.actionDivider && <>
-            <Divider/>
-            <Box p={2}/>
+            <Divider />
+            <Box p={2} />
         </>;
     }
 
@@ -44,7 +44,7 @@ export class DefaultActionsRenderer implements ActionsRenderer {
         return this.options.actions.map((action, index) => {
             return <Box key={index}>
                 {action(this.form)}
-                <Box p={this.options.actionHorizontalSpacing}/>
+                <Box p={this.options.actionHorizontalSpacing} />
             </Box>
         });
     }

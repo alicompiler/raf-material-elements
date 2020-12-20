@@ -1,6 +1,6 @@
-import {Field} from "@alicompiler/raf-core";
+import { Field } from "@autofiy/raf-core";
 import * as React from "react";
-import {FieldMessageType} from "@alicompiler/raf-core/build/Field/UI/FieldUIConfiguration";
+import { FieldMessageType } from "@autofiy/raf-core";
 
 export abstract class BaseField<Extra = any> extends Field<Extra> {
 
@@ -12,8 +12,8 @@ export abstract class BaseField<Extra = any> extends Field<Extra> {
         const Component = this.getComponent();
 
         return <Component {...mainProps}
-                          {...otherProps}
-                          {...extraProps}>
+            {...otherProps}
+            {...extraProps}>
             {
                 this.renderChildren()
             }
@@ -40,7 +40,7 @@ export abstract class BaseField<Extra = any> extends Field<Extra> {
             error: !valid,
             disabled: disable,
             helperText: message,
-            FormHelperTextProps: {error: isErrorMessage}
+            FormHelperTextProps: { error: isErrorMessage }
         }
     }
 
@@ -49,6 +49,6 @@ export abstract class BaseField<Extra = any> extends Field<Extra> {
     }
 
     protected getExtraProps(): any {
-        return {...this.state.extra}
+        return { ...this.state.extra }
     }
 }

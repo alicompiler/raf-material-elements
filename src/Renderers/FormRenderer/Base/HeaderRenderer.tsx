@@ -1,7 +1,7 @@
-import {Box, Divider, Typography} from "@material-ui/core";
+import { Box, Divider, Typography } from "@material-ui/core";
 import React from "react";
-import IForm from "@alicompiler/raf-core/build/Form/IForm";
-import {HeaderRenderOptions} from "./BaseRenderOptions";
+import { IForm } from "@autofiy/raf-core";
+import { HeaderRenderOptions } from "./BaseRenderOptions";
 
 
 export interface HeaderRenderer {
@@ -31,8 +31,8 @@ export class DefaultHeaderRenderer implements HeaderRenderer {
     private renderDivider(): any {
         const withDivider = this.options.headerDivider;
         return withDivider && <>
-            <Divider/>
-            <Box my={2}/>
+            <Divider />
+            <Box my={2} />
         </>;
     }
 
