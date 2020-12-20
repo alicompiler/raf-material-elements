@@ -12,4 +12,5 @@ yarn.lock
 .eslintcache
 
 ./build/__examples
+./build/Example
 yarn-error.log
