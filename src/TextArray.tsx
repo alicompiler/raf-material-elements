@@ -1,8 +1,8 @@
-import {DynamicField} from "@alicompiler/raf-core";
+import { DynamicField } from "@autofiy/raf-core";
 import React from "react";
-import {Box, Button, TextField} from "@material-ui/core";
-import {DynamicFieldConfiguration} from "@alicompiler/raf-core/build/Field/Configuration/DynamicFieldExtra";
-import {Localization} from "./Localization";
+import { Box, Button, TextField } from "@material-ui/core";
+import { DynamicFieldConfiguration } from "@autofiy/raf-core";
+import { Localization } from "./Localization";
 
 export interface Extra extends DynamicFieldConfiguration {
     removeButton?: boolean;
@@ -30,7 +30,7 @@ export class TextArray extends DynamicField<Extra> {
         if (position === wantedPosition || position === "both") {
             return <Box py={2} display={"flex"} justifyContent={`flex-${hPosition}`}>
                 <Button variant={"outlined"} color={"primary"}
-                        onClick={() => this.addInput('')}>{addButtonText}</Button>
+                    onClick={() => this.addInput('')}>{addButtonText}</Button>
             </Box>
         }
     }
@@ -40,11 +40,11 @@ export class TextArray extends DynamicField<Extra> {
         const removeButtonText = this.extra().config('removeButtonText') ?? Localization.remove;
         return <Box py={1} key={index} display={'flex'}>
             <TextField value={value} fullWidth
-                       onChange={e => this.value().getOnChangeHandler().handle({...e, index: index})}/>
-            <Box p={2}/>
+                onChange={e => this.value().getOnChangeHandler().handle({ ...e, index: index })} />
+            <Box p={2} />
             {
                 hasRemoveButton && <Button color={"secondary"} onClick={() => this.removeInput(index)}
-                                           variant={"outlined"}>{removeButtonText}</Button>
+                    variant={"outlined"}>{removeButtonText}</Button>
             }
         </Box>
     }

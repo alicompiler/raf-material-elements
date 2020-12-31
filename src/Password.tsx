@@ -1,4 +1,4 @@
-import {Text} from "./Text";
+import { Text } from "./Text";
 
 export class Password extends Text {
     protected getInputType(): string {
