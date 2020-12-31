@@ -1,7 +1,6 @@
 import React from "react";
 import { Box, Divider } from "@material-ui/core";
 import FieldRenderer from "@autofiy/raf-core/build/Protocol/FieldRenderer";
-import FormDefault from "@autofiy/raf-core";
 import { FieldOptions } from "@autofiy/raf-core/build/Field/FieldProps";
 import { DefaultLabelRenderer } from "./KeyValueLabelRenderer";
 import { defaultKeyValueRenderOptions, KeyValueRenderOptions } from "./KeyValueRenderOptions";
