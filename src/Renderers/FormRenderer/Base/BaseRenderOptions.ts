@@ -1,4 +1,4 @@
-import { IForm } from "@autofiy/raf-core";
+import {IForm} from "@autofiy/raf-core";
 
 export interface HeaderRenderOptions {
     header?: string | ((form: IForm) => any);

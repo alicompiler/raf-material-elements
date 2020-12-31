@@ -1,8 +1,8 @@
 import React from "react";
-import { Box, Grid } from "@material-ui/core";
-import { defaultSimpleFormRendererOptions, SimpleFormRendererOptions } from "./SimpleFormRendererOptions";
-import { MaterialFormRendererBase } from "../Base/MaterialFormRenderer";
-import { IForm } from "@autofiy/raf-core";
+import {Box, Grid} from "@material-ui/core";
+import {defaultSimpleFormRendererOptions, SimpleFormRendererOptions} from "./SimpleFormRendererOptions";
+import {MaterialFormRendererBase} from "../Base/MaterialFormRenderer";
+import {IForm} from "@autofiy/raf-core";
 
 
 export class SimpleFormRenderer extends MaterialFormRendererBase<SimpleFormRendererOptions> {
@@ -19,11 +19,6 @@ export class SimpleFormRenderer extends MaterialFormRendererBase<SimpleFormRende
         </Box>
     }
 
-    protected getDefaultRenderOptions(): SimpleFormRendererOptions {
-        return { ...defaultSimpleFormRendererOptions }
-    }
-
-
     renderFieldsArea(): any {
         const fields: any[] = this.renderFields();
         const verticalSpacing = this.getRenderOptions().verticalSpacing;
@@ -31,6 +26,10 @@ export class SimpleFormRenderer extends MaterialFormRendererBase<SimpleFormRende
             const render = this.renderOneFieldOrFieldArray(field);
             return <Box py={verticalSpacing} key={index}>{render}</Box>
         })
+    }
+
+    protected getDefaultRenderOptions(): SimpleFormRendererOptions {
+        return {...defaultSimpleFormRendererOptions}
     }
 
     private renderOneFieldOrFieldArray(field: any): any {

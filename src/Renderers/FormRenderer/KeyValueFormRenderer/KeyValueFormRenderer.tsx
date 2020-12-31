@@ -1,17 +1,12 @@
 import React from "react";
-import { Box, Divider } from "@material-ui/core";
+import {Box, Divider} from "@material-ui/core";
 import FieldRenderer from "@autofiy/raf-core/build/Protocol/FieldRenderer";
-import { FieldOptions } from "@autofiy/raf-core/build/Field/FieldProps";
-import { DefaultLabelRenderer } from "./KeyValueLabelRenderer";
-import { defaultKeyValueRenderOptions, KeyValueRenderOptions } from "./KeyValueRenderOptions";
-import { MaterialFormRendererBase } from "../Base/MaterialFormRenderer";
+import {FieldOptions} from "@autofiy/raf-core/build/Field/FieldProps";
+import {DefaultLabelRenderer} from "./KeyValueLabelRenderer";
+import {defaultKeyValueRenderOptions, KeyValueRenderOptions} from "./KeyValueRenderOptions";
+import {MaterialFormRendererBase} from "../Base/MaterialFormRenderer";
 
 export class KeyValueFormRenderer extends MaterialFormRendererBase<KeyValueRenderOptions> {
-
-
-    protected getDefaultRenderOptions(): KeyValueRenderOptions {
-        return defaultKeyValueRenderOptions;
-    }
 
 
     renderFieldsArea(): any {
@@ -29,6 +24,14 @@ export class KeyValueFormRenderer extends MaterialFormRendererBase<KeyValueRende
         </Box>
     }
 
+    protected getDefaultRenderOptions(): KeyValueRenderOptions {
+        return defaultKeyValueRenderOptions;
+    }
+
+    protected renderKeyValueLabel(fieldOptions: FieldOptions | FieldOptions[]): any {
+        return new DefaultLabelRenderer(this.getRenderOptions()).render(fieldOptions);
+    }
+
     private renderField = (field: any, fieldOptions: FieldOptions | FieldOptions[], index: number, withFieldDivider: boolean): any => {
         const options = this.getRenderOptions();
         return <React.Fragment key={index}>
@@ -44,14 +47,9 @@ export class KeyValueFormRenderer extends MaterialFormRendererBase<KeyValueRende
                 }
             </Box>
             {
-                withFieldDivider && <Divider />
+                withFieldDivider && <Divider/>
             }
         </React.Fragment>
-    }
-
-
-    protected renderKeyValueLabel(fieldOptions: FieldOptions | FieldOptions[]): any {
-        return new DefaultLabelRenderer(this.getRenderOptions()).render(fieldOptions);
     }
 
 }

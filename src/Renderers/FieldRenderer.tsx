@@ -17,5 +17,5 @@ export class FieldRenderer extends DefaultFieldRenderer {
     protected renderArray(index: number, config: FieldOptions[]): any {
         return config.map(config => this.renderFieldElement(config, true));
     }
-    
+
 }

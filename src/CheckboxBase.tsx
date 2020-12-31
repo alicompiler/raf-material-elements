@@ -1,7 +1,6 @@
-import { Field } from "@autofiy/raf-core";
-import { FormControlLabel } from "@material-ui/core";
+import {Field, FieldProps} from "@autofiy/raf-core";
+import {FormControlLabel} from "@material-ui/core";
 import React from "react";
-import { FieldProps } from "@autofiy/raf-core";
 
 
 export interface Extra {
@@ -24,13 +23,13 @@ export abstract class CheckboxBase extends Field {
         const label = this.extra().config('label') ?? '';
         const Component = this.getComponent();
         return <FormControlLabel label={label} {...labelProps}
-            control={
-                <Component checked={this.value().get()}
-                    onChange={(e: any) => this.value().getOnChangeHandler().handle(e)}
-                    name={this.getName()}
-                    {...checkboxProps}
-                />
-            } />
+                                 control={
+                                     <Component checked={this.value().get()}
+                                                onChange={(e: any) => this.value().getOnChangeHandler().handle(e)}
+                                                name={this.getName()}
+                                                {...checkboxProps}
+                                     />
+                                 }/>
     }
 
     protected abstract getComponent(): any;

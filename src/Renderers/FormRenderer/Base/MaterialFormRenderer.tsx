@@ -36,8 +36,6 @@ export abstract class MaterialFormRendererBase<O extends RenderOptions> extends 
         return {...this.getDefaultRenderOptions(), ...formRenderOptions};
     }
 
-    protected abstract getDefaultRenderOptions(): O;
-
     abstract renderFieldsArea(): any;
 
     renderHeaderArea(): any {
@@ -47,5 +45,7 @@ export abstract class MaterialFormRendererBase<O extends RenderOptions> extends 
     renderActionsArea(): any {
         return new DefaultActionsRenderer(this.getRenderOptions(), this.getForm()).render();
     }
+
+    protected abstract getDefaultRenderOptions(): O;
 
 }

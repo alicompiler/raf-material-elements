@@ -1,4 +1,4 @@
-import { Text, TextExtra } from "./Text";
+import {Text, TextExtra} from "./Text";
 
 interface TextAreaExtra extends TextExtra {
     rows?: number;

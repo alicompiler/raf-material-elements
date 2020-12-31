@@ -1,5 +1,5 @@
-import { Field } from "@autofiy/raf-core";
-import { FormControl, FormControlLabel, FormLabel, Radio as MaterialRadio, RadioGroup } from "@material-ui/core";
+import {Field} from "@autofiy/raf-core";
+import {FormControl, FormControlLabel, FormLabel, Radio as MaterialRadio, RadioGroup} from "@material-ui/core";
 import React from "react";
 
 interface Option {
@@ -23,13 +23,17 @@ export class Radio extends Field<Extra> {
         return <FormControl component="fieldset">
             {this.renderLabel()}
             <RadioGroup row name={this.getName()} value={this.value().get()}
-                onChange={e => this.value().getOnChangeHandler().handle(e)}
-                {...groupProps}>
+                        onChange={e => this.value().getOnChangeHandler().handle(e)}
+                        {...groupProps}>
                 {
                     this.getOptions().map(this.renderOption)
                 }
             </RadioGroup>
         </FormControl>
+    }
+
+    protected getOptions(): Option[] {
+        return this.extra().config('options') ?? [];
     }
 
     private renderLabel(): any {
@@ -42,16 +46,12 @@ export class Radio extends Field<Extra> {
 
     private renderOption = (option: Option, index: number): any => {
         const generalControlProps = this.extra().config('controlLabelProps');
-        const otherProps = { ...generalControlProps, ...(option.controlProps ?? {}) }
+        const otherProps = {...generalControlProps, ...(option.controlProps ?? {})}
         return <FormControlLabel key={index}
-            value={option.value}
-            control={<MaterialRadio {...(option.radioProps ?? {})} />}
-            label={option.text}
-            {...otherProps}
+                                 value={option.value}
+                                 control={<MaterialRadio {...(option.radioProps ?? {})} />}
+                                 label={option.text}
+                                 {...otherProps}
         />
-    }
-
-    protected getOptions(): Option[] {
-        return this.extra().config('options') ?? [];
     }
 }
