@@ -24,7 +24,7 @@ class ScheduleExample extends Component {
                             ]
                         }
                     },
-                    {as: NativeTime, name: 'startTime', extra: {__label: 'Interval Start Time'}},
+                    {as: NativeTime, name: 'startTime', extra: {__label: 'Interval Start Time' , label : 'Test'}},
                     {as: TextArray, name: 'commands', extra: {__label: 'Commands'}},
                     {as: Switch, name: 'asAdmin', extra: {__label: 'Admin Permission'}},
                 ]} services={{

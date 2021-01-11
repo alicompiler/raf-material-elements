@@ -1,13 +1,18 @@
 import React, {Component} from 'react';
-import {Box, Divider} from "@material-ui/core";
+import {Box, Divider, Theme, withTheme} from "@material-ui/core";
 import {LoginExample} from "./LoginExample";
 import CreateProfileExample from "./CreateProfileExample";
 import ScheduleExample from "./ScheduleExample";
 
-class MaterialExample extends Component {
+interface Props {
+    theme: Theme;
+}
+
+class MaterialExample extends Component<Props> {
     render() {
+        const {theme} = this.props;
         return (
-            <Box>
+            <Box style={{background : theme.palette.background.default}}>
 
                 <LoginExample/>
 
@@ -32,4 +37,4 @@ class MaterialExample extends Component {
     }
 }
 
-export default MaterialExample;
+export default withTheme(MaterialExample);
